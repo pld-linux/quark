@@ -2,15 +2,15 @@
 # todo:
 # - should cli client link with gtk+ libraries?
 # - strange-quark separate package (first, resolve first todo item)?
-# - make patch for install schemas in proper location and send it to authors
 #
 Summary:	Quark is an audio player, for geeks, by geeks
 Name:		quark
 Version:	3.11
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://quark.nerdnest.org/%{name}-%{version}.tar.gz
+Patch0:		%{name}-schemas.patch
 # Source0-md5:	938467f152ef4815caddcbcd32ab478d
 BuildRequires:	xine-lib-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
@@ -26,8 +26,12 @@ supported by Xine.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__automake}
+%{__autoconf}
 %configure \
 	--disable-schemas-install
 %{__make}
@@ -37,11 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-#install schemas in proper location
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/gconf/schemas
-install quark/quark.schemas $RPM_BUILD_ROOT%{_sysconfdir}/gconf/schemas
-install strange-quark/strange-quark.schemas $RPM_BUILD_ROOT%{_sysconfdir}/gconf/schemas
 
 %find_lang %{name}
 
