@@ -1,0 +1,44 @@
+diff -urN quark-3.11.orig/quark/Makefile.am quark-3.11/quark/Makefile.am
+--- quark-3.11.orig/quark/Makefile.am	Mon Jun 23 00:28:23 2003
++++ quark-3.11/quark/Makefile.am	Mon Jun 23 00:37:09 2003
+@@ -23,13 +23,14 @@
+ EXTRA_DIST = \
+   quark.schemas
+ 
+-if GCONF_SCHEMAS_INSTALL
++
+ install-data-local: quark.schemas
++	$(INSTALL) -d $(DESTDIR)$(GCONF_SCHEMA_FILE_DIR)
++	$(INSTALL) $< $(DESTDIR)$(GCONF_SCHEMA_FILE_DIR)
++if GCONF_SCHEMAS_INSTALL
+ 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+ 	gconftool-2 --makefile-install-rule $<
+-	$(INSTALL) -d $(GCONF_SCHEMA_FILE_DIR)
+-	$(INSTALL) $< $(GCONF_SCHEMA_FILE_DIR)
++endif
+ 
+ uninstall-local:
+ 	$(RM) $(GCONF_SCHEMA_FILE_DIR)/quark.schemas
+-endif
+diff -urN quark-3.11.orig/strange-quark/Makefile.am quark-3.11/strange-quark/Makefile.am
+--- quark-3.11.orig/strange-quark/Makefile.am	Mon Jun 23 00:28:23 2003
++++ quark-3.11/strange-quark/Makefile.am	Mon Jun 23 00:36:49 2003
+@@ -34,13 +34,14 @@
+   quark.desktop \
+   strange-quark.schemas
+ 
+-if GCONF_SCHEMAS_INSTALL
++
+ install-data-local: strange-quark.schemas
++	$(INSTALL) -d $(DESTDIR)$(GCONF_SCHEMA_FILE_DIR)
++	$(INSTALL) $< $(DESTDIR)$(GCONF_SCHEMA_FILE_DIR)
++if GCONF_SCHEMAS_INSTALL
+ 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+ 	gconftool-2 --makefile-install-rule $<
+-	$(INSTALL) -d $(GCONF_SCHEMA_FILE_DIR)
+-	$(INSTALL) $< $(GCONF_SCHEMA_FILE_DIR)
++endif
+ 
+ uninstall-local:
+ 	$(RM) $(GCONF_SCHEMA_FILE_DIR)/strange-quark.schemas
+-endif
