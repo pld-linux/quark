@@ -13,6 +13,7 @@ BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	libtool
 BuildRequires:	xine-lib-devel
 Requires(post):	GConf2
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
