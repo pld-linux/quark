@@ -51,7 +51,7 @@ Requires:       %{name} = %{version}-%{release}
 Based on gtk+2 GUI for quark.
 
 %description strange -l pl
-Bazowne na gtk+2 GUI dla quarka.
+Oparte na gtk+2 GUI dla quarka.
 
 %prep
 %setup -q
