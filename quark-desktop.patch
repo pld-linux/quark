@@ -1,7 +1,7 @@
 diff -aurN quark-3.21.orig/strange-quark/quark.desktop quark-3.21/strange-quark/quark.desktop
 --- quark-3.21.orig/strange-quark/quark.desktop	2003-08-30 20:59:17.000000000 +0200
-+++ quark-3.21/strange-quark/quark.desktop	2004-11-24 11:51:26.095562856 +0100
-@@ -1,9 +1,11 @@
++++ quark-3.21/strange-quark/quark.desktop	2004-11-24 12:09:02.963894448 +0100
+@@ -1,9 +1,10 @@
  [Desktop Entry]
  Encoding=UTF-8
 -Name=Quark Music Player
@@ -15,4 +15,3 @@ diff -aurN quark-3.21.orig/strange-quark/quark.desktop quark-3.21/strange-quark/
  Type=Application
 -Categories=Application;AudioVideo;
 +Categories=GTK;Audio;Player;
-+vi: encoding=utf-8
