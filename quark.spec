@@ -1,23 +1,18 @@
-#
-# todo:
-# - should cli client link with gtk+ libraries?
-# - strange-quark separate package (first, resolve first todo item)?
-#
 Summary:	Quark is an audio player, for geeks, by geeks
 Summary(pl):	Quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków
 Name:		quark
-Version:	3.11
-Release:	0.2
+Version:	3.20
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://quark.nerdnest.org/%{name}-%{version}.tar.gz
-Patch0:		%{name}-schemas.patch
-# Source0-md5:	938467f152ef4815caddcbcd32ab478d
+# Source0-md5:	b7f95c309ab8aa9b6ca071e35b5ea863
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:  gettext-devel
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	xine-lib-devel
 Requires(post):	GConf2
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,16 +29,42 @@ tle z dostêpem przez nazwany potok umieszczony w systemie plików. Do
 odtwarzania muzyki u¿ywa Xine-lib, wiêc mo¿e odtwarzaæ pliki w
 dowolnym formacie obs³ugiwanym przez Xine.
 
+%package charm
+Summary:        CLI for quark
+Summary(pl):    CLI dla quarka
+Group:          X11/Applications
+Requires:       %{name} = %{version}-%{release}
+
+%description charm
+Simple bash script to controlling quark via command line.
+
+%description charm -l pl
+Prosty skrypt basha do sterowania quarkiem z linii poleceñ.
+
+%package strange
+Summary:        GUI for quark
+Summary(pl):    GUI dla quarka
+Group:          X11/Applications
+Requires:       %{name} = %{version}-%{release}
+
+%description strange
+Based on gtk+2 GUI for quark.
+
+%description strange -l pl
+Bazowne na gtk+2 GUI dla quarka.
+
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__gettextize}
+%{__libtoolize}
+%{__aclocal}
 %{__automake}
 %{__autoconf}
 %configure \
 	--disable-schemas-install
+	
 %{__make}
 
 %install
@@ -63,9 +84,13 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README
-%attr(755,root,root) %{_bindir}/charm-quark
 %attr(755,root,root) %{_bindir}/quark
-%attr(755,root,root) %{_bindir}/strange-quark
-%{_sysconfdir}/gconf/schemas/*.schemas
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
+%{_sysconfdir}/gconf/schemas/*.schemas
+
+%files charm
+%attr(755,root,root) %{_bindir}/charm-quark
+
+%files strange
+%attr(755,root,root) %{_bindir}/strange-quark
