@@ -5,8 +5,9 @@ Version:	3.21
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://quark.nerdnest.org/%{name}-%{version}.tar.gz
+Source0:	http://quark.sunsite.dk/%{name}-%{version}.tar.gz
 # Source0-md5:	d2e16ef97b9107df27ac4a8ba269b6ab
+URL:		http://quark.sunsite.dk/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
