@@ -1,5 +1,5 @@
-Summary:	Quark is an audio player, for geeks, by geeks
-Summary(pl):	Quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków
+Summary:	quark is an audio player, for geeks, by geeks
+Summary(pl):	quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków
 Name:		quark
 Version:	3.20
 Release:	1
@@ -10,7 +10,7 @@ Source0:	http://quark.nerdnest.org/%{name}-%{version}.tar.gz
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:  gettext-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	xine-lib-devel
@@ -18,22 +18,22 @@ Requires(post):	GConf2
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Quark is an audio player, for geeks, by geeks. It runs in the
+quark is an audio player, for geeks, by geeks. It runs in the
 background with access provided via a FIFO in the filesystem. It uses
 Xine-lib for playing music, and can therefore play any file format
 supported by Xine.
 
 %description -l pl
-Quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków. Dzia³a w
+quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków. Dzia³a w
 tle z dostêpem przez nazwany potok umieszczony w systemie plików. Do
 odtwarzania muzyki u¿ywa Xine-lib, wiêc mo¿e odtwarzaæ pliki w
 dowolnym formacie obs³ugiwanym przez Xine.
 
 %package charm
-Summary:        CLI for quark
-Summary(pl):    CLI dla quarka
-Group:          X11/Applications
-Requires:       %{name} = %{version}-%{release}
+Summary:	CLI for quark
+Summary(pl):	CLI dla quarka
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
 
 %description charm
 Simple bash script to controlling quark via command line.
@@ -42,10 +42,10 @@ Simple bash script to controlling quark via command line.
 Prosty skrypt basha do sterowania quarkiem z linii poleceñ.
 
 %package strange
-Summary:        GUI for quark
-Summary(pl):    GUI dla quarka
-Group:          X11/Applications
-Requires:       %{name} = %{version}-%{release}
+Summary:	GUI for quark
+Summary(pl):	GUI dla quarka
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
 
 %description strange
 Based on gtk+2 GUI for quark.
