@@ -2,11 +2,12 @@ Summary:	quark is an audio player, for geeks, by geeks
 Summary(pl):	quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków
 Name:		quark
 Version:	3.21
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://quark.sunsite.dk/%{name}-%{version}.tar.gz
 # Source0-md5:	d2e16ef97b9107df27ac4a8ba269b6ab
+Patch0:		%{name}-desktop.patch
 URL:		http://quark.sunsite.dk/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
@@ -57,6 +58,7 @@ Oparte na gtk+2 GUI dla quarka.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
