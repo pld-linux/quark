@@ -93,7 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*.schemas
 
 %files charm
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/charm-quark
 
 %files strange
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/strange-quark
