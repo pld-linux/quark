@@ -1,11 +1,17 @@
+#
+# todo:
+# - should cli client link with gtk+ libraries?
+# - strange-quark separate package (first, resolve first todo item)?
+# - make patch for install schemas in proper location and send it to authors
+#
 Summary:	Quark is an audio player, for geeks, by geeks
 Name:		quark
-Version:	3.1
-Release:	1
+Version:	3.11
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://quark.nerdnest.org/%{name}-%{version}.tar.gz
-# Source0-md5:	cef037af5cd0fff762496cc930c2fdb9
+# Source0-md5:	938467f152ef4815caddcbcd32ab478d
 BuildRequires:	xine-lib-devel
 BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	GConf2-devel
