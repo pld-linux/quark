@@ -65,7 +65,8 @@ Oparte na gtk+2 GUI dla quarka.
 %{__automake}
 %{__autoconf}
 %configure \
-	--disable-schemas-install
+	--disable-schemas-install \
+	--enable-debug=%{?debug:yes}%{!?debug:no}
 	
 %{__make}
 
