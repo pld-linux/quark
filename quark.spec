@@ -16,6 +16,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	xine-lib-devel
 Requires(post):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
