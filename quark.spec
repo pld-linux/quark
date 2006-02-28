@@ -9,9 +9,9 @@ Source0:	http://quark.sunsite.dk/%{name}-%{version}.tar.gz
 # Source0-md5:	d2e16ef97b9107df27ac4a8ba269b6ab
 Patch0:		%{name}-desktop.patch
 URL:		http://quark.sunsite.dk/
+BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	GConf2-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 1:2.0.0
@@ -71,7 +71,7 @@ Oparte na gtk+2 GUI dla quarka.
 %configure \
 	--disable-schemas-install \
 	--enable-debug=%{?debug:yes}%{!?debug:no}
-	
+
 %{__make}
 
 %install
