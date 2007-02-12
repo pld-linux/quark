@@ -1,5 +1,5 @@
 Summary:	quark is an audio player, for geeks, by geeks
-Summary(pl):	quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków
+Summary(pl.UTF-8):   quark to odtwarzacz dÅºwiÄ™ku pisany przez geekÃ³w dla geekÃ³w
 Name:		quark
 Version:	3.21
 Release:	3
@@ -28,34 +28,34 @@ background with access provided via a FIFO in the filesystem. It uses
 Xine-lib for playing music, and can therefore play any file format
 supported by Xine.
 
-%description -l pl
-quark to odtwarzacz d¼wiêku pisany przez geeków dla geeków. Dzia³a w
-tle z dostêpem przez nazwany potok umieszczony w systemie plików. Do
-odtwarzania muzyki u¿ywa Xine-lib, wiêc mo¿e odtwarzaæ pliki w
-dowolnym formacie obs³ugiwanym przez Xine.
+%description -l pl.UTF-8
+quark to odtwarzacz dÅºwiÄ™ku pisany przez geekÃ³w dla geekÃ³w. DziaÅ‚a w
+tle z dostÄ™pem przez nazwany potok umieszczony w systemie plikÃ³w. Do
+odtwarzania muzyki uÅ¼ywa Xine-lib, wiÄ™c moÅ¼e odtwarzaÄ‡ pliki w
+dowolnym formacie obsÅ‚ugiwanym przez Xine.
 
 %package charm
 Summary:	CLI for quark
-Summary(pl):	CLI dla quarka
+Summary(pl.UTF-8):   CLI dla quarka
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description charm
 Simple bash script to controlling quark via command line.
 
-%description charm -l pl
-Prosty skrypt basha do sterowania quarkiem z linii poleceñ.
+%description charm -l pl.UTF-8
+Prosty skrypt basha do sterowania quarkiem z linii poleceÅ„.
 
 %package strange
 Summary:	GUI for quark
-Summary(pl):	GUI dla quarka
+Summary(pl.UTF-8):   GUI dla quarka
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description strange
 Based on gtk+2 GUI for quark.
 
-%description strange -l pl
+%description strange -l pl.UTF-8
 Oparte na gtk+2 GUI dla quarka.
 
 %prep
