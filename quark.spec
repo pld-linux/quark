@@ -1,5 +1,5 @@
 Summary:	quark is an audio player, for geeks, by geeks
-Summary(pl.UTF-8):   quark to odtwarzacz dźwięku pisany przez geeków dla geeków
+Summary(pl.UTF-8):	quark to odtwarzacz dźwięku pisany przez geeków dla geeków
 Name:		quark
 Version:	3.21
 Release:	3
@@ -36,7 +36,7 @@ dowolnym formacie obsługiwanym przez Xine.
 
 %package charm
 Summary:	CLI for quark
-Summary(pl.UTF-8):   CLI dla quarka
+Summary(pl.UTF-8):	CLI dla quarka
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -48,7 +48,7 @@ Prosty skrypt basha do sterowania quarkiem z linii poleceń.
 
 %package strange
 Summary:	GUI for quark
-Summary(pl.UTF-8):   GUI dla quarka
+Summary(pl.UTF-8):	GUI dla quarka
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
