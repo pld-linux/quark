@@ -12,7 +12,7 @@ URL:		http://quark.sunsite.dk/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-vfs2-devel >= 2.0.0
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtool
